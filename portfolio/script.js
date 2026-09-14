@@ -1,5 +1,3 @@
-const DEMO_VIDEO_URL = "https://drive.google.com/file/d/1zQbxGZYo-ll_Jpl1X71B-AWGVedBwJG2/view?usp=drivesdk";
-
 const menuButton = document.querySelector(".menu-button");
 const navigation = document.querySelector(".nav-links");
 
@@ -16,14 +14,6 @@ navigation.querySelectorAll("a").forEach((link) => {
 });
 
 document.getElementById("year").textContent = new Date().getFullYear();
-
-if (DEMO_VIDEO_URL) {
-  const demoLink = document.getElementById("demo-video-link");
-  demoLink.href = DEMO_VIDEO_URL;
-  demoLink.hidden = false;
-  document.querySelector(".video-card strong").textContent = "Watch the project walkthrough";
-  document.querySelector(".video-card small").hidden = true;
-}
 
 const observer = new IntersectionObserver(
   (entries) => entries.forEach((entry) => {
