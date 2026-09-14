@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
+
 import os
 from pathlib import Path
 
@@ -20,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-+%9-oq1@c6@8&&d0b9w7_42vixi)+y-n6e_v2z0_%(xepz-c8x'
+SECRET_KEY = 'django-insecure-_kur06-$n*zu0+hw7u#)doz_3@w5k4*#zqo-aqlmb1q&0kdmkh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -58,8 +59,7 @@ ROOT_URLCONF = 'moviesstore.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,
-                              'moviesstore/templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'moviesstore/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
