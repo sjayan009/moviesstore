@@ -1,4 +1,4 @@
-const DEMO_VIDEO_URL = "";
+const DEMO_VIDEO_URL = "https://drive.google.com/file/d/1zQbxGZYo-ll_Jpl1X71B-AWGVedBwJG2/view?usp=drivesdk";
 
 const menuButton = document.querySelector(".menu-button");
 const navigation = document.querySelector(".nav-links");
