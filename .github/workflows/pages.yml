@@ -28,8 +28,12 @@ jobs:
         uses: actions/checkout@v4
       - name: Configure Pages
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
+      - name: Add movie artwork
+        run: |
+          mkdir -p portfolio/assets
+          cp media/movie_images/avatar.jpg portfolio/assets/avatar.jpg
+          cp media/movie_images/inception.jpg portfolio/assets/inception.jpg
+          cp media/movie_images/titanic.jpg portfolio/assets/titanic.jpg
       - name: Upload portfolio
         uses: actions/upload-pages-artifact@v3
         with:
