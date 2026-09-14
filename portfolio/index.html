@@ -81,12 +81,39 @@
     </section>
 
     <section class="process shell" id="process">
-      <div class="section-heading reveal"><p class="eyebrow"><span></span> The process</p><h2>From user stories to a working deployment.</h2><p>I used an iterative, feature-by-feature approach: understand the user need, build the smallest complete flow, test it in the browser, and refine the interface before moving forward.</p></div>
+      <div class="section-heading reveal"><p class="eyebrow"><span></span> The process</p><h2>From user stories to a working full-stack system.</h2><p>I developed the project incrementally, but each feature was part of a larger architecture. I separated the application into focused Django apps, designed the database relationships, connected requests to server-side logic, and tested complete user journeys before deploying them.</p></div>
+
+      <div class="system-map reveal">
+        <div class="system-map-heading">
+          <span>System architecture</span>
+          <strong>Django’s Model–View–Template pattern</strong>
+        </div>
+        <div class="system-flow" aria-label="Application request and response flow">
+          <div><small>01</small><strong>Browser</strong><span>GET or POST request</span></div>
+          <i aria-hidden="true">→</i>
+          <div><small>02</small><strong>URL + View</strong><span>Route and business logic</span></div>
+          <i aria-hidden="true">→</i>
+          <div><small>03</small><strong>Models</strong><span>SQLite data access</span></div>
+          <i aria-hidden="true">→</i>
+          <div><small>04</small><strong>Template</strong><span>Rendered HTML response</span></div>
+        </div>
+        <p>A request first reaches Django’s URL configuration and is routed to the correct view. The view reads or updates data through Django models, prepares a template-data dictionary, and renders the appropriate reusable HTML template back to the user.</p>
+      </div>
+
+      <div class="architecture-details">
+        <article class="architecture-detail reveal"><span>Application design</span><h3>Four apps with clear responsibilities</h3><p><strong>Home</strong> handles the landing and about pages. <strong>Movies</strong> owns catalog search, detail pages, and reviews. <strong>Cart</strong> manages cart state, totals, checkout, orders, and line items. <strong>Accounts</strong> handles registration, login, logout, and order history. A shared base template keeps navigation and styling consistent across every screen.</p></article>
+        <article class="architecture-detail reveal"><span>Data design</span><h3>Related models instead of duplicated data</h3><p>The <strong>Movie</strong> model stores each title’s name, price, description, and image. Every <strong>Review</strong> connects a movie to its author through foreign keys. At checkout, an <strong>Order</strong> belongs to the logged-in user and contains <strong>Item</strong> records that preserve the purchased movie, quantity, and price.</p></article>
+        <article class="architecture-detail reveal"><span>State and security</span><h3>A lightweight cart with protected actions</h3><p>I kept the in-progress cart in the Django session as a movie-ID-to-quantity dictionary, so visitors can shop without creating database records prematurely. Checkout, order history, and review mutations use authenticated routes. Review ownership checks prevent one user from editing or deleting another user’s review.</p></article>
+        <article class="architecture-detail reveal"><span>End-to-end flow</span><h3>Turning temporary selections into an order</h3><p>When checkout begins, the server loads the selected movies, calculates the total from current prices and quantities, creates one Order, and creates an Item for each movie. It then clears the session cart and returns a confirmation containing the new order ID. The saved relationship lets the account page reconstruct past purchases.</p></article>
+      </div>
+
       <ol class="timeline">
-        <li class="reveal"><span>01</span><div><h3>Plan the experience</h3><p>I translated the assignment’s user stories into clear screens and routes, then separated responsibilities across the home, movies, cart, and accounts apps.</p></div></li>
-        <li class="reveal"><span>02</span><div><h3>Build the foundation</h3><p>I created Django models, views, URLs, and templates, using reusable base layouts so navigation and visual patterns stayed consistent.</p></div></li>
-        <li class="reveal"><span>03</span><div><h3>Connect each journey</h3><p>I linked search to movie details, movie details to the cart, checkout to saved orders, and authenticated accounts to review management.</p></div></li>
-        <li class="reveal"><span>04</span><div><h3>Test, debug, and deploy</h3><p>I worked through questions by isolating one route or feature at a time, checking Django documentation and course examples, and validating the completed flow on PythonAnywhere.</p></div></li>
+        <li class="reveal"><span>01</span><div><h3>Translate user stories into routes</h3><p>I began by mapping each required action to a screen and URL: catalog browsing and search, movie details, cart review, account access, checkout, order history, and review management. This gave me a route-level plan before I wrote the implementation.</p></div></li>
+        <li class="reveal"><span>02</span><div><h3>Design the models and app boundaries</h3><p>I defined Movie, Review, Order, and Item models and connected them with foreign keys. I divided the code into independent Django apps so that catalog logic, account logic, and purchasing logic would not become mixed together as the project grew.</p></div></li>
+        <li class="reveal"><span>03</span><div><h3>Implement one complete flow at a time</h3><p>For each feature, I connected its URL, view, model query, and template before moving on. For example, search reads a query-string value, filters movie names case-insensitively through the ORM, passes the results into template data, and renders the updated catalog.</p></div></li>
+        <li class="reveal"><span>04</span><div><h3>Add authentication and ownership rules</h3><p>I used Django’s built-in authentication system and custom signup form handling rather than storing passwords myself. Login-required decorators protect private actions, while server-side ownership checks control which review-editing options each user can access.</p></div></li>
+        <li class="reveal"><span>05</span><div><h3>Debug through the entire request cycle</h3><p>When something failed, I traced it in order: confirm the URL matched, inspect the request method and submitted values, check the view’s branching logic, verify the database query, and finally inspect the template context. I used Django documentation and course examples to resolve framework-specific questions.</p></div></li>
+        <li class="reveal"><span>06</span><div><h3>Validate and deploy the production build</h3><p>I manually exercised both normal and edge cases, including empty searches, incorrect login credentials, an empty cart, unauthorized review edits, checkout, and persistent order history. I then configured the Django project for PythonAnywhere, migrated the database, served static and uploaded media files, and retested the live routes.</p></div></li>
       </ol>
     </section>
 
