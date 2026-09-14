@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jayan Sirikonda's GT Movies Store project portfolio.">
+  <meta name="theme-color" content="#0b1526">
+  <title>Jayan Sirikonda | GT Movies Store</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23b3a369'/%3E%3Cpath d='M18 18h28v28H18z' fill='%230b1526'/%3E%3Cpath d='M25 14v8M39 14v8M25 42v8M39 42v8M14 25h8M14 39h8M42 25h8M42 39h8' stroke='%23fff' stroke-width='4'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Jayan Sirikonda home"><span>JS</span> Jayan Sirikonda</a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
+      <div class="nav-links" id="nav-links">
+        <a href="#about">About</a>
+        <a href="#project">Project</a>
+        <a href="#process">Process</a>
+        <a href="#demo">Demo</a>
+        <a class="nav-cta" href="https://anakinprogramming123456.pythonanywhere.com/" target="_blank" rel="noreferrer">Live app <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero shell" id="about">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span></span> Computer Science · Georgia Tech</p>
+        <h1>I build practical software at the intersection of <em>AI</em> and human experience.</h1>
+        <p class="hero-intro">I’m Jayan Sirikonda, a computer science student interested in artificial intelligence, machine learning, and full-stack development. I enjoy turning complex ideas into software that feels clear, useful, and approachable.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#project">Explore the project <span aria-hidden="true">↓</span></a>
+          <a class="text-link" href="https://github.com/sjayan009/moviesstore" target="_blank" rel="noreferrer">View source on GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="hero-card reveal" aria-label="Featured project summary">
+        <div class="card-topline"><span>Featured build</span><span class="status"><i></i> Live</span></div>
+        <div class="project-mark" aria-hidden="true"><span>GT</span><small>Movies Store</small></div>
+        <div class="hero-card-bottom">
+          <div><strong>Django</strong><span>Backend</span></div>
+          <div><strong>SQLite</strong><span>Database</span></div>
+          <div><strong>Python</strong><span>Language</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section" id="project">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span></span> The project</p>
+          <h2>A complete movie shopping experience.</h2>
+          <p>GT Movies Store is a full-stack Django web application that lets customers discover movies, learn more about each title, share reviews, and complete a purchase through a persistent shopping cart.</p>
+        </div>
+
+        <div class="browser reveal" aria-label="Stylized preview of GT Movies Store">
+          <div class="browser-bar"><i></i><i></i><i></i><span>anakinprogramming123456.pythonanywhere.com</span></div>
+          <div class="browser-content">
+            <div class="browser-copy"><span>GT MOVIES STORE</span><h3>Your ticket to unlimited entertainment.</h3><p>Browse, review, and purchase your favorite films in one simple experience.</p><a href="https://anakinprogramming123456.pythonanywhere.com/movies/" target="_blank" rel="noreferrer">Browse movies →</a></div>
+            <div class="poster-stack" aria-hidden="true"><div class="poster poster-one">INCEPTION</div><div class="poster poster-two">AVATAR</div><div class="poster poster-three">TITANIC</div></div>
+          </div>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature reveal"><span class="feature-number">01</span><div class="feature-icon">⌕</div><h3>Discover movies</h3><p>Visitors can browse the full catalog or search by title, then open a dedicated page with the movie’s image, description, and price.</p><p class="story">“As a shopper, I want to quickly find a movie that interests me.”</p></article>
+          <article class="feature reveal"><span class="feature-number">02</span><div class="feature-icon">＋</div><h3>Build a cart</h3><p>Customers choose a quantity, add titles to a session-based cart, review the calculated total, clear the cart, or complete their purchase.</p><p class="story">“As a customer, I want to manage my selections before checking out.”</p></article>
+          <article class="feature reveal"><span class="feature-number">03</span><div class="feature-icon">◎</div><h3>Join the community</h3><p>Account creation and login unlock reviews and order history. Authors can edit or delete their reviews, while other users can report content.</p><p class="story">“As a movie fan, I want to share and manage my opinion.”</p></article>
+        </div>
+
+        <div class="architecture reveal">
+          <div><p class="eyebrow"><span></span> How it works</p><h3>Four focused Django apps, one connected journey.</h3></div>
+          <div class="architecture-flow"><span>Home</span><i>→</i><span>Movies</span><i>→</i><span>Cart</span><i>→</i><span>Accounts</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process shell" id="process">
+      <div class="section-heading reveal"><p class="eyebrow"><span></span> The process</p><h2>From user stories to a working deployment.</h2><p>I used an iterative, feature-by-feature approach: understand the user need, build the smallest complete flow, test it in the browser, and refine the interface before moving forward.</p></div>
+      <ol class="timeline">
+        <li class="reveal"><span>01</span><div><h3>Plan the experience</h3><p>I translated the assignment’s user stories into clear screens and routes, then separated responsibilities across the home, movies, cart, and accounts apps.</p></div></li>
+        <li class="reveal"><span>02</span><div><h3>Build the foundation</h3><p>I created Django models, views, URLs, and templates, using reusable base layouts so navigation and visual patterns stayed consistent.</p></div></li>
+        <li class="reveal"><span>03</span><div><h3>Connect each journey</h3><p>I linked search to movie details, movie details to the cart, checkout to saved orders, and authenticated accounts to review management.</p></div></li>
+        <li class="reveal"><span>04</span><div><h3>Test, debug, and deploy</h3><p>I worked through questions by isolating one route or feature at a time, checking Django documentation and course examples, and validating the completed flow on PythonAnywhere.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="demo-section" id="demo">
+      <div class="shell demo-grid">
+        <div class="section-heading reveal"><p class="eyebrow light"><span></span> Video demonstration</p><h2>See the complete customer journey.</h2><p>The walkthrough covers catalog search, movie details, account access, reviews, cart management, checkout, and order history.</p><div class="demo-actions"><a class="button button-gold" href="https://anakinprogramming123456.pythonanywhere.com/" target="_blank" rel="noreferrer">Open the live app <span aria-hidden="true">↗</span></a><a class="text-link light-link" href="https://github.com/sjayan009/moviesstore" target="_blank" rel="noreferrer">Explore the code <span aria-hidden="true">↗</span></a></div></div>
+        <div class="video-card reveal"><div class="play" aria-hidden="true">▶</div><p>Demo recording</p><strong>Video link will be added here</strong><small>Add your Microsoft Teams recording URL to the <code>DEMO_VIDEO_URL</code> value in <code>script.js</code>.</small><a id="demo-video-link" href="#" hidden target="_blank" rel="noreferrer">Watch demonstration <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="shell"><p><strong>Jayan Sirikonda</strong><br>Computer Science at Georgia Tech</p><p>Designed and built with HTML, CSS, and JavaScript.<br><span>© <span id="year"></span> Jayan Sirikonda</span></p></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>
